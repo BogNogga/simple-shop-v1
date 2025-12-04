@@ -143,4 +143,147 @@
 
     footer {
       margin-top: 32px;
-      border-top: 1px solid
+      border-top: 1px solid #e5e7eb;
+      padding-top: 16px;
+      font-size: 0.8rem;
+      color: #777;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 12px;
+      }
+
+      .page {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <!-- TODO: CHANGE SHOP NAME -->
+      <h1>My Webshop</h1>
+      <p>One simple product. Multiple sizes and colours.</p>
+    </header>
+
+    <main>
+      <section class="product-layout">
+        <div class="product-image">
+          <!-- TODO: REPLACE product.jpg WITH YOUR OWN IMAGE FILE NAME -->
+          <img src="product.jpg" alt="Product photo" />
+        </div>
+
+        <div class="product-details">
+          <!-- TODO: CHANGE PRODUCT NAME & TEXT -->
+          <h2>Awesome T-Shirt</h2>
+          <p>A high-quality basic t-shirt, perfect for everyday use.</p>
+
+          <div class="price">€29,95</div>
+
+          <div class="options">
+            <!-- TODO: EDIT SIZES -->
+            <label for="size">Size</label>
+            <select id="size" name="size">
+              <option value="" disabled selected>Select a size</option>
+              <option value="S">Small (S)</option>
+              <option value="M">Medium (M)</option>
+              <option value="L">Large (L)</option>
+              <option value="XL">Extra Large (XL)</option>
+            </select>
+
+            <!-- TODO: EDIT COLOURS -->
+            <label for="color">Colour</label>
+            <select id="color" name="color">
+              <option value="" disabled selected>Select a colour</option>
+              <option value="black">Black</option>
+              <option value="white">White</option>
+              <option value="blue">Blue</option>
+            </select>
+          </div>
+
+          <div class="cta-buttons">
+            <!-- TODO: PUT YOUR REAL WHATSAPP NUMBER & EMAIL -->
+            <!-- WhatsApp link: replace 31612345678 with your phone number in international format, no + or 0 -->
+            <a
+              id="whatsappButton"
+              class="btn btn-primary"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Order via WhatsApp
+            </a>
+
+            <a class="btn btn-secondary" href="mailto:youremail@example.com">
+              Or order via email
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-section">
+        <!-- TODO: CHANGE TEXT BELOW -->
+        <h2>Product details</h2>
+        <p>
+          This t-shirt is made from soft, comfortable cotton. Ideal for daily wear, sports,
+          or relaxing at home. Available in multiple colours and sizes.
+        </p>
+      </section>
+
+      <section class="info-section">
+        <h2>Shipping & returns</h2>
+        <p>
+          Orders are shipped within 2–3 working days. Not happy with your order?
+          You can return it within 14 days after delivery.
+        </p>
+      </section>
+
+      <section class="info-section">
+        <h2>Contact</h2>
+        <p>
+          Questions? Send a message via WhatsApp or email:
+          <a href="mailto:youremail@example.com">youremail@example.com</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> My Webshop. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // Set current year automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Build WhatsApp link that includes size & colour choice in the message
+    const whatsappButton = document.getElementById("whatsappButton");
+    const sizeSelect = document.getElementById("size");
+    const colorSelect = document.getElementById("color");
+
+    whatsappButton.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const size = sizeSelect.value || "not selected";
+      const color = colorSelect.value || "not selected";
+
+      // TODO: REPLACE WITH YOUR PHONE NUMBER (no +, no 0 at start)
+      const phoneNumber = "31612345678";
+
+      const message = encodeURIComponent(
+        "Hi! I would like to order:\n" +
+          "- Product: Awesome T-Shirt\n" +
+          "- Size: " + size + "\n" +
+          "- Colour: " + color + "\n\n" +
+          "Please tell me how to pay and the total price including shipping."
+      );
+
+      const url = "https://wa.me/" + phoneNumber + "?text=" + message;
+      window.open(url, "_blank");
+    });
+  </script>
+</body>
+</html>
