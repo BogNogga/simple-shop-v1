@@ -1,130 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cozy Hoodie – My Webshop</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <title>Training T-Shirt – My Webshop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JSON-LD Product schema for AI tools / crawlers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Training T-Shirt",
+    "description": "Lightweight training T-shirt for workouts and daily use.",
+    "image": "https://YOUR-DOMAIN-HERE/img/product2.jpg",
+    "sku": "TRAIN-TSHIRT-001",
+    "offers": {
+      "@type": "Offer",
+      "price": "29.95",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <h1><a href="index.html" class="shop-link">My Webshop</a></h1>
-      <p>One simple product page for the Cozy Hoodie.</p>
-    </header>
+  <header>
+    <h1>Training T-Shirt</h1>
+    <nav>
+      <a href="index.html">← Back to homepage</a>
+    </nav>
+  </header>
 
-    <main>
-      <section class="product-layout">
-        <div class="product-image">
-          <!-- TODO: ENSURE product2.jpg EXISTS OR CHANGE FILE NAME -->
-          <img src="product2.jpg" alt="Cozy Hoodie" />
-        </div>
+  <main class="product-page">
+    <section class="product-main">
+      <img src="img/product2.jpg" alt="Training T-Shirt" class="product-image">
 
-        <div class="product-details">
-          <!-- TODO: CHANGE NAME & DESCRIPTION IF NEEDED -->
-          <h2>Cozy Hoodie</h2>
-          <p>A warm and soft hoodie for colder days.</p>
+      <div class="product-info">
+        <h2>Training T-Shirt</h2>
+        <p>Lightweight, breathable T-shirt for sports and everyday wear.</p>
 
-          <div class="price">€49,95</div>
+        <!-- Standardized price element -->
+        <p class="product-price">
+          Price:
+          <span class="price" data-price="29.95" data-currency="EUR">
+            €29,95
+          </span>
+        </p>
 
-          <div class="options">
-            <!-- TODO: EDIT SIZES -->
-            <label for="size">Size</label>
-            <select id="size" name="size">
-              <option value="" disabled selected>Select a size</option>
-              <option value="S">Small (S)</option>
-              <option value="M">Medium (M)</option>
-              <option value="L">Large (L)</option>
-              <option value="XL">Extra Large (XL)</option>
+        <form class="product-options">
+          <label>
+            Size:
+            <select name="size">
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
             </select>
+          </label>
 
-            <!-- TODO: EDIT COLOURS -->
-            <label for="color">Colour</label>
-            <select id="color" name="color">
-              <option value="" disabled selected>Select a colour</option>
+          <label>
+            Colour:
+            <select name="color">
+              <option value="white">White</option>
               <option value="black">Black</option>
-              <option value="grey">Grey</option>
-              <option value="navy">Navy</option>
+              <option value="blue">Blue</option>
             </select>
-          </div>
+          </label>
+        </form>
 
-          <div class="cta-buttons">
-            <!-- TODO: PUT YOUR REAL WHATSAPP NUMBER & EMAIL -->
-            <a
-              id="whatsappButton"
-              class="btn btn-primary"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Order via WhatsApp
-            </a>
-
-            <a class="btn btn-secondary" href="mailto:youremail@example.com">
-              Or order via email
-            </a>
-          </div>
+        <div class="product-actions">
+          <a href="https://wa.me/31600000000" class="button">Order via WhatsApp</a>
+          <p>or</p>
+          <a href="mailto:youremail@example.com?subject=Order%20Training%20T-Shirt" class="button secondary">
+            Order via email
+          </a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="info-section">
-        <h2>Product details</h2>
-        <p>
-          This hoodie is made from a soft cotton blend with a brushed inside.
-          Perfect for cold evenings, lounging, or outdoor activities.
-        </p>
-      </section>
+    <section class="product-details">
+      <h3>Product details</h3>
+      <ul>
+        <li>Lightweight and breathable fabric</li>
+        <li>Quick-dry material</li>
+        <li>Comfortable fit for training</li>
+        <li>Suitable for gym, running and daily use</li>
+      </ul>
 
-      <section class="info-section">
-        <h2>Shipping & returns</h2>
-        <p>
-          Orders are shipped within 2–3 working days. Not happy with your order?
-          You can return it within 14 days after delivery.
-        </p>
-      </section>
+      <h3>Shipping &amp; returns</h3>
+      <ul>
+        <li>Orders shipped within 2–3 working days</li>
+        <li>Returns possible within 14 days of delivery</li>
+      </ul>
+    </section>
+  </main>
 
-      <section class="info-section">
-        <h2>Contact</h2>
-        <p>
-          Questions? Send a message via WhatsApp or email:
-          <a href="mailto:youremail@example.com">youremail@example.com</a>.
-        </p>
-      </section>
-    </main>
-
-    <footer>
-      &copy; <span id="year"></span> My Webshop. All rights reserved.
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // WhatsApp button that includes size & colour
-    const whatsappButton = document.getElementById("whatsappButton");
-    const sizeSelect = document.getElementById("size");
-    const colorSelect = document.getElementById("color");
-
-    whatsappButton.addEventListener("click", function (event) {
-      event.preventDefault();
-
-      const size = sizeSelect.value || "not selected";
-      const color = colorSelect.value || "not selected";
-
-      // TODO: REPLACE WITH YOUR PHONE NUMBER (no +, no 0 at start)
-      const phoneNumber = "31612345678";
-
-      const message = encodeURIComponent(
-        "Hi! I would like to order:\n" +
-          "- Product: Cozy Hoodie (€49,95)\n" +
-          "- Size: " + size + "\n" +
-          "- Colour: " + color + "\n\n" +
-          "Please tell me how to pay and the total price including shipping."
-      );
-
-      const url = "https://wa.me/" + phoneNumber + "?text=" + message;
-      window.open(url, "_blank");
-    });
-  </script>
+  <footer>
+    <p>© My Webshop. All rights reserved.</p>
+  </footer>
 </body>
 </html>
