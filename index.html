@@ -3,250 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Webshop – One Product</title>
-  <style>
-    /* BASIC RESET */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    body {
-      background: #f5f5f5;
-      color: #222;
-      padding: 20px;
-    }
-
-    .page {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    header p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    .product-layout {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin-top: 24px;
-    }
-
-    .product-image {
-      flex: 1 1 260px;
-      min-width: 260px;
-    }
-
-    .product-image img {
-      width: 100%;
-      border-radius: 12px;
-      display: block;
-    }
-
-    .product-details {
-      flex: 1 1 260px;
-      min-width: 260px;
-    }
-
-    .price {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin: 12px 0;
-    }
-
-    .options {
-      margin: 16px 0;
-    }
-
-    .options label {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.9rem;
-      color: #444;
-    }
-
-    .options select {
-      width: 100%;
-      padding: 8px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-bottom: 12px;
-      font-size: 0.95rem;
-    }
-
-    .cta-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 16px;
-    }
-
-    .btn {
-      display: inline-block;
-      text-align: center;
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: none;
-      font-size: 0.95rem;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    .btn-primary {
-      background: #111827;
-      color: #fff;
-    }
-
-    .btn-secondary {
-      background: #e5e7eb;
-      color: #111827;
-    }
-
-    .btn:hover {
-      opacity: 0.9;
-    }
-
-    .info-section {
-      margin-top: 32px;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      color: #555;
-    }
-
-    .info-section h2 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      color: #111827;
-    }
-
-    .info-section + .info-section {
-      margin-top: 16px;
-    }
-
-    footer {
-      margin-top: 32px;
-      border-top: 1px solid #e5e7eb;
-      padding-top: 16px;
-      font-size: 0.8rem;
-      color: #777;
-      text-align: center;
-    }
-
-    @media (max-width: 640px) {
-      body {
-        padding: 12px;
-      }
-
-      .page {
-        padding: 16px;
-      }
-    }
-  </style>
+  <title>My Webshop – Home</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="page">
     <header>
       <!-- TODO: CHANGE SHOP NAME -->
       <h1>My Webshop</h1>
-      <p>One simple product. Multiple sizes and colours.</p>
+      <p>Two simple products. Choose your favourite.</p>
     </header>
 
     <main>
-      <section class="product-layout">
-        <div class="product-image">
-          <!-- TODO: REPLACE product.jpg WITH YOUR OWN IMAGE FILE NAME -->
-          <img src="product.jpg" alt="Product photo" />
-        </div>
-
-        <div class="product-details">
-          <!-- TODO: CHANGE PRODUCT NAME & TEXT -->
+      <section class="product-list">
+        <!-- PRODUCT 1 CARD -->
+        <article class="product-card">
+          <!-- TODO: MAKE SURE product1.jpg EXISTS -->
+          <img src="product1.jpg" alt="Product 1" class="product-card-image" />
+          <!-- TODO: CHANGE NAME, TEXT, PRICE -->
           <h2>Awesome T-Shirt</h2>
-          <p>A high-quality basic t-shirt, perfect for everyday use.</p>
+          <p class="product-card-description">
+            A comfortable everyday t-shirt available in multiple colours.
+          </p>
+          <div class="product-card-price">€29,95</div>
+          <a href="product1.html" class="btn btn-primary">View product</a>
+        </article>
 
-          <div class="price">€29,95</div>
-
-          <div class="options">
-            <!-- TODO: EDIT SIZES -->
-            <label for="size">Size</label>
-            <select id="size" name="size">
-              <option value="" disabled selected>Select a size</option>
-              <option value="S">Small (S)</option>
-              <option value="M">Medium (M)</option>
-              <option value="L">Large (L)</option>
-              <option value="XL">Extra Large (XL)</option>
-            </select>
-
-            <!-- TODO: EDIT COLOURS -->
-            <label for="color">Colour</label>
-            <select id="color" name="color">
-              <option value="" disabled selected>Select a colour</option>
-              <option value="black">Black</option>
-              <option value="white">White</option>
-              <option value="blue">Blue</option>
-            </select>
-          </div>
-
-          <div class="cta-buttons">
-            <!-- TODO: PUT YOUR REAL WHATSAPP NUMBER & EMAIL -->
-            <!-- WhatsApp link: replace 31612345678 with your phone number in international format, no + or 0 -->
-            <a
-              id="whatsappButton"
-              class="btn btn-primary"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Order via WhatsApp
-            </a>
-
-            <a class="btn btn-secondary" href="mailto:youremail@example.com">
-              Or order via email
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="info-section">
-        <!-- TODO: CHANGE TEXT BELOW -->
-        <h2>Product details</h2>
-        <p>
-          This t-shirt is made from soft, comfortable cotton. Ideal for daily wear, sports,
-          or relaxing at home. Available in multiple colours and sizes.
-        </p>
-      </section>
-
-      <section class="info-section">
-        <h2>Shipping & returns</h2>
-        <p>
-          Orders are shipped within 2–3 working days. Not happy with your order?
-          You can return it within 14 days after delivery.
-        </p>
-      </section>
-
-      <section class="info-section">
-        <h2>Contact</h2>
-        <p>
-          Questions? Send a message via WhatsApp or email:
-          <a href="mailto:youremail@example.com">youremail@example.com</a>.
-        </p>
+        <!-- PRODUCT 2 CARD -->
+        <article class="product-card">
+          <!-- TODO: MAKE SURE product2.jpg EXISTS -->
+          <img src="product2.jpg" alt="Product 2" class="product-card-image" />
+          <!-- TODO: CHANGE NAME, TEXT, PRICE -->
+          <h2>Cozy Hoodie</h2>
+          <p class="product-card-description">
+            A warm hoodie for cold days, soft on the inside.
+          </p>
+          <div class="product-card-price">€49,95</div>
+          <a href="product2.html" class="btn btn-primary">View product</a>
+        </article>
       </section>
     </main>
 
@@ -258,32 +52,6 @@
   <script>
     // Set current year automatically
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Build WhatsApp link that includes size & colour choice in the message
-    const whatsappButton = document.getElementById("whatsappButton");
-    const sizeSelect = document.getElementById("size");
-    const colorSelect = document.getElementById("color");
-
-    whatsappButton.addEventListener("click", function (event) {
-      event.preventDefault();
-
-      const size = sizeSelect.value || "not selected";
-      const color = colorSelect.value || "not selected";
-
-      // TODO: REPLACE WITH YOUR PHONE NUMBER (no +, no 0 at start)
-      const phoneNumber = "31612345678";
-
-      const message = encodeURIComponent(
-        "Hi! I would like to order:\n" +
-          "- Product: Awesome T-Shirt\n" +
-          "- Size: " + size + "\n" +
-          "- Colour: " + color + "\n\n" +
-          "Please tell me how to pay and the total price including shipping."
-      );
-
-      const url = "https://wa.me/" + phoneNumber + "?text=" + message;
-      window.open(url, "_blank");
-    });
   </script>
 </body>
 </html>
