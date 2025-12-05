@@ -1,57 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Webshop – Home</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <title>My Simple Webshop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="page">
-    <header>
-      <!-- TODO: CHANGE SHOP NAME -->
-      <h1>My Webshop</h1>
-      <p>Two simple products. Choose your favourite.</p>
-    </header>
+  <header>
+    <h1>My Simple Webshop</h1>
+    <p>Two products. No fuss.</p>
+  </header>
 
-    <main>
-      <section class="product-list">
-        <!-- PRODUCT 1 CARD -->
-        <article class="product-card">
-          <!-- TODO: MAKE SURE product1.jpg EXISTS -->
-          <img src="product1.jpg" alt="Product 1" class="product-card-image" />
-          <!-- TODO: CHANGE NAME, TEXT, PRICE -->
-          <h2>Awesome T-Shirt</h2>
-          <p class="product-card-description">
-            A comfortable everyday t-shirt available in multiple colours.
-          </p>
-          <div class="product-card-price">€29,95</div>
-          <a href="product1.html" class="btn btn-primary">View product</a>
-        </article>
+  <main>
+    <section class="product-list">
 
-        <!-- PRODUCT 2 CARD -->
-        <article class="product-card">
-          <!-- TODO: MAKE SURE product2.jpg EXISTS -->
-          <img src="product2.jpg" alt="Product 2" class="product-card-image" />
-          <!-- TODO: CHANGE NAME, TEXT, PRICE -->
-          <h2>Cozy Hoodie</h2>
-          <p class="product-card-description">
-            A warm hoodie for cold days, soft on the inside.
-          </p>
-          <div class="product-card-price">€49,95</div>
-          <a href="product2.html" class="btn btn-primary">View product</a>
-        </article>
-      </section>
-    </main>
+      <!-- Product 1 card -->
+      <article class="product-card">
+        <img src="img/product1.jpg" alt="Cozy Hoodie">
+        <h2>Cozy Hoodie</h2>
+        <p>A warm and soft hoodie for colder days.</p>
+        <p>
+          <span class="price" data-price="49.95" data-currency="EUR">
+            €49,95
+          </span>
+        </p>
+        <p><a href="product1.html" class="button">View product</a></p>
+      </article>
 
-    <footer>
-      &copy; <span id="year"></span> My Webshop. All rights reserved.
-    </footer>
-  </div>
+      <!-- Product 2 card -->
+      <article class="product-card">
+        <img src="img/product2.jpg" alt="Training T-Shirt">
+        <h2>Training T-Shirt</h2>
+        <p>Lightweight T-shirt for workouts and daily wear.</p>
+        <p>
+          <span class="price" data-price="29.95" data-currency="EUR">
+            €29,95
+          </span>
+        </p>
+        <p><a href="product2.html" class="button">View product</a></p>
+      </article>
 
-  <script>
-    // Set current year automatically
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    </section>
+  </main>
+
+  <footer>
+    <p>© My Webshop. All rights reserved.</p>
+  </footer>
 </body>
 </html>
